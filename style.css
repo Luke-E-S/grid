@@ -5,3 +5,10 @@ html {
 *, *::after, *::before {
     box-sizing: inherit;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red; /* for testing */
+    margin: 0 400px;
+}
