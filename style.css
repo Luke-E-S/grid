@@ -11,15 +11,11 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 1px solid red; /* for testing */
     margin: 0 auto;
-    width: 425px;
 }
 
 .container .grid {
     display: flex;
-    width: 25px;
-    height: 25px;
     border: 1px solid black;
 
 }
