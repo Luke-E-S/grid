@@ -4,8 +4,8 @@ const adjustSizeButton = document.createElement("button");
 adjustSizeButton.textContent = "Adjust Grid Size";
 container.parentElement.insertBefore(adjustSizeButton, container);
 
-const gridWidth = 64;
-const containerWidth = 960;
+const gridWidth = 16;
+const containerWidth = 640;
 const gridSize = gridWidth * gridWidth;
 
 container.style.width = containerWidth + "px";
