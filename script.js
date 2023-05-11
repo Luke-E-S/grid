@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 const adjustSizeButton = document.createElement("button");
 
 adjustSizeButton.textContent = "Adjust Grid Size";
+adjustSizeButton.addEventListener("click", () => {removeGrid()});
 container.parentElement.insertBefore(adjustSizeButton, container);
 
 const gridWidth = 16;
@@ -11,10 +12,10 @@ const gridSize = gridWidth * gridWidth;
 container.style.width = containerWidth + "px";
 
 function removeGrid() {
-    const div = getElementsByClass("grid");
+    const div = document.querySelectorAll(".grid");
     for(i = 0; i < div.length; i++) 
     {
-        div[i].remove();
+        div[i].parentNode.removeChild(div[i]);
     }
 }
 
@@ -24,7 +25,7 @@ function createGrid(width, size) {
     {
         const div = document.createElement("div");
         div.className = "grid";
-        
+        div.textContent = i;
         /* display borders without any sides touching eachother */
         div.style.borderTop = "1px solid black";
         div.style.borderLeft = "1px solid black";
