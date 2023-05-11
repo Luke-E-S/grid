@@ -19,6 +19,10 @@ function removeGrid() {
     }
 }
 
+function getGridSize() {
+    /**prompt user for a grid size GL GL */
+}
+
 function createGrid(width, size) {
         /*  create the grid of divs, give them a class for style */
     for(let i = 1; i < size+1; i++)
