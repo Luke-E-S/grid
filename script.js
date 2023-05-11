@@ -6,3 +6,11 @@ for(let i = 0; i < 256; i++) {
     container.appendChild(div);
 
 }
+
+const gridItem = document.getElementsByClassName("grid");
+
+
+for(let i = 0; i < gridItem.length; i++){
+    gridItem[i].addEventListener("mouseover", 
+    (() => gridItem[i].style.backgroundColor = "blue"))
+}
