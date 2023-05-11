@@ -1,16 +1,33 @@
 const container = document.querySelector(".container");
+const adjustSizeButton = document.createElement("button");
 
-const defaultGridWidth = 16;
+adjustSizeButton.textContent = "Adjust Grid Size";
+container.parentElement.insertBefore(adjustSizeButton, container);
+
+const gridWidth = 16;
 const containerWidth = 960;
-const gridSize = defaultGridWidth * defaultGridWidth;
+const gridSize = gridWidth * gridWidth;
 
 container.style.width = containerWidth + "px";
 
-for(let i = 0; i < gridSize; i++) {
+for(let i = 1; i < gridSize+1; i++) {
     const div = document.createElement("div");
+    div.textContent = i;
     div.className = "grid";
-    div.style.width =  containerWidth / defaultGridWidth + "px";
-    div.style.height =  containerWidth / defaultGridWidth + "px";
+    div.style.borderTop = "1px solid black";
+    div.style.borderLeft = "1px solid black";
+    if(i===gridSize) {
+        div.style.borderRight = "1px solid black";
+        div.style.borderBottom = "1px solid black";
+    }
+    else if(i % 16 === 0) {
+        div.style.borderRight = "1px solid black";
+    }
+    else if (i > gridSize - gridWidth) {
+        div.style.borderBottom = "1px solid black";
+    }
+    div.style.width =  containerWidth / gridWidth + "px";
+    div.style.height =  containerWidth / gridWidth + "px";
     container.appendChild(div);
 
 }
