@@ -10,9 +10,18 @@ const gridSize = gridWidth * gridWidth;
 
 container.style.width = containerWidth + "px";
 
+function removeGrid() {
+    const div = getElementsByClass("grid");
+    for(i = 0; i < div.length; i++) 
+    {
+        div[i].remove();
+    }
+}
+
 function createGrid(width, size) {
         /*  create the grid of divs, give them a class for style */
-    for(let i = 1; i < size+1; i++) {
+    for(let i = 1; i < size+1; i++)
+    {
         const div = document.createElement("div");
         div.className = "grid";
         
@@ -31,7 +40,6 @@ function createGrid(width, size) {
         div.style.width =  containerWidth / width + "px";
         div.style.height =  containerWidth / width + "px";
         container.appendChild(div);
-
     }
 }
 
