@@ -18,13 +18,22 @@ function removeGrid() {
         div[i].parentNode.removeChild(div[i]);
     }
 }
-
+let color = 999;
+function getColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return "" + r +"," + g + "," + b;
+}
 function addEvents() {
     /* array used to add events tot he grid for painting */
     const gridItem = document.querySelectorAll(".grid");
     for(let i = 0; i < gridItem.length; i++){
         gridItem[i].addEventListener("mouseover", 
-        (() => gridItem[i].style.backgroundColor = "blue"))
+        (() =>  {
+            color = getColor();
+            gridItem[i].style.backgroundColor = "rgb("+color+")";
+        }))
     }
 }
 
@@ -39,7 +48,7 @@ function getGridSize() {
         choice = prompt("please pick a number lower than 100");
     }
     removeGrid();
-    createGrid(choice, choice*choice);
+    createGrid(choice, choice*choice);    
     addEvents();
 }
 
@@ -69,11 +78,5 @@ function createGrid(width, size) {
 }
 
 createGrid(gridWidth, gridSize);
+addEvents();
 
-
-/* array used to add events tot he grid for painting */
-const gridItem = document.getElementsByClassName("grid");
-for(let i = 0; i < gridItem.length; i++){
-    gridItem[i].addEventListener("mouseover", 
-    (() => gridItem[i].style.backgroundColor = "blue"))
-}
