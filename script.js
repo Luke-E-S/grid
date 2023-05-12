@@ -29,7 +29,7 @@ function createGrid(width, size) {
     {
         const div = document.createElement("div");
         div.className = "grid";
-        div.textContent = i;
+        div.style.backgroundColor = "white";
         /* display borders without any sides touching eachother */
         div.style.borderTop = "1px solid black";
         div.style.borderLeft = "1px solid black";
