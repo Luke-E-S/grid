@@ -21,7 +21,7 @@ function removeGrid() {
 
 function addEvents() {
     /* array used to add events tot he grid for painting */
-    const gridItem = document.getElementsByClassName("grid");
+    const gridItem = document.querySelectorAll(".grid");
     for(let i = 0; i < gridItem.length; i++){
         gridItem[i].addEventListener("mouseover", 
         (() => gridItem[i].style.backgroundColor = "blue"))
