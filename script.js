@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 const adjustSizeButton = document.createElement("button");
 
 adjustSizeButton.textContent = "Adjust Grid Size";
-adjustSizeButton.addEventListener("click", () => {removeGrid()});
+adjustSizeButton.addEventListener("click", () => {getGridSize()});
 container.parentElement.insertBefore(adjustSizeButton, container);
 
 const gridWidth = 16;
@@ -21,6 +21,10 @@ function removeGrid() {
 
 function getGridSize() {
     /**prompt user for a grid size GL GL */
+    choice = prompt("What grid size would you like?" +
+    " (multiples of 8, no bigger than 100)");
+    removeGrid();
+    createGrid(choice, choice*choice);
 }
 
 function createGrid(width, size) {
