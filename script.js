@@ -19,6 +19,15 @@ function removeGrid() {
     }
 }
 
+function addEvents() {
+    /* array used to add events tot he grid for painting */
+    const gridItem = document.getElementsByClassName("grid");
+    for(let i = 0; i < gridItem.length; i++){
+        gridItem[i].addEventListener("mouseover", 
+        (() => gridItem[i].style.backgroundColor = "blue"))
+    }
+}
+
 function getGridSize() {
     /**prompt user for a grid size GL GL */
     choice = prompt("What grid size would you like?" +
@@ -31,6 +40,7 @@ function getGridSize() {
     }
     removeGrid();
     createGrid(choice, choice*choice);
+    addEvents();
 }
 
 function createGrid(width, size) {
