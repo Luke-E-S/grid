@@ -23,6 +23,12 @@ function getGridSize() {
     /**prompt user for a grid size GL GL */
     choice = prompt("What grid size would you like?" +
     " (multiples of 8, no bigger than 100)");
+    if (choice % 8 !== 0) {
+        choice = prompt("Please pick a multiple of 8");
+    }
+    if (choice > 99) {
+        choice = prompt("please pick a number lower than 100");
+    }
     removeGrid();
     createGrid(choice, choice*choice);
 }
